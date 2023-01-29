@@ -3,12 +3,13 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Ranking List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CryptoCase" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,11 +18,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dGz-NX-a6d">
-                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="yFK-jw-v22">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="206" translatesAutoresizingMaskIntoConstraints="NO" id="X5G-hV-DUU">
+                                            <rect key="frame" x="8" y="5" width="403" height="34.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ranking List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWV-9c-YUC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="98.5" height="34.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncz-NF-4e3">
+                                                    <rect key="frame" x="304.5" y="0.0" width="98.5" height="34.5"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="24h Vol">
+                                                        <imageReference key="image" image="arrowtriangle.down.fill" catalog="system" symbolScale="medium"/>
+                                                        <fontDescription key="titleFontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="sortButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fK-1x-qCC"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="X5G-hV-DUU" firstAttribute="top" secondItem="yFK-jw-v22" secondAttribute="top" constant="5" id="IwX-xY-vpf"/>
+                                        <constraint firstItem="X5G-hV-DUU" firstAttribute="leading" secondItem="yFK-jw-v22" secondAttribute="leading" constant="8" id="POd-7X-E5V"/>
+                                        <constraint firstAttribute="bottom" secondItem="X5G-hV-DUU" secondAttribute="bottom" constant="4.5" id="n95-Ql-Dvt"/>
+                                        <constraint firstAttribute="trailing" secondItem="X5G-hV-DUU" secondAttribute="trailing" constant="3" id="p1I-vq-xwy"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CryptoTableViewCell" id="bK6-wx-C5d" customClass="CryptoTableViewCell" customModule="CryptoCase" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="100"/>
+                                        <rect key="frame" x="0.0" y="94" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bK6-wx-C5d" id="dbw-K5-Zx3">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -40,10 +76,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dGz-NX-a6d" secondAttribute="bottom" id="vXS-Pl-46j"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="uCP-JK-c13">
-                        <nil key="title"/>
-                    </navigationItem>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="prW-I4-YEc"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Ranking List" id="uCP-JK-c13"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="sortButton" destination="ncz-NF-4e3" id="89q-Es-jAy"/>
                         <outlet property="tableView" destination="dGz-NX-a6d" id="FHc-A2-BM6"/>
                     </connections>
                 </viewController>
@@ -71,6 +110,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowtriangle.down.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
