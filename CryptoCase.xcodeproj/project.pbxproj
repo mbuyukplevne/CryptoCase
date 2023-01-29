@@ -7,15 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E05AD632986E103001F8544 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2E05AD622986E103001F8544 /* SDWebImage */; };
+		2E05AD652986E103001F8544 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2E05AD642986E103001F8544 /* SDWebImageMapKit */; };
+		2E05AD682986E152001F8544 /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 2E05AD672986E152001F8544 /* SDWebImageSVGCoder */; };
+		2E22AB6A29869AF8007116B5 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E22AB6929869AF8007116B5 /* APIConstants.swift */; };
+		2E27F20929856F4200898B36 /* CryptoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E27F20829856F4200898B36 /* CryptoListViewModel.swift */; };
+		2E2E210829856842000F0906 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2E210729856842000F0906 /* APICaller.swift */; };
+		2EC131E82986CCCB009F0018 /* CryptoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC131E62986CCCB009F0018 /* CryptoTableViewCell.swift */; };
+		2EC131E92986CCCB009F0018 /* CryptoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EC131E72986CCCB009F0018 /* CryptoTableViewCell.xib */; };
 		2EF93B8F2985408B00BAF7E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF93B8E2985408B00BAF7E4 /* AppDelegate.swift */; };
 		2EF93B912985408B00BAF7E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF93B902985408B00BAF7E4 /* SceneDelegate.swift */; };
 		2EF93B932985408B00BAF7E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF93B922985408B00BAF7E4 /* ViewController.swift */; };
 		2EF93B962985408B00BAF7E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EF93B942985408B00BAF7E4 /* Main.storyboard */; };
 		2EF93B982985408D00BAF7E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF93B972985408D00BAF7E4 /* Assets.xcassets */; };
 		2EF93B9B2985408D00BAF7E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EF93B992985408D00BAF7E4 /* LaunchScreen.storyboard */; };
+		2EF93BA5298544C000BAF7E4 /* CryptoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF93BA4298544C000BAF7E4 /* CryptoModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E22AB6929869AF8007116B5 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		2E27F20829856F4200898B36 /* CryptoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewModel.swift; sourceTree = "<group>"; };
+		2E2E210729856842000F0906 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		2EC131E62986CCCB009F0018 /* CryptoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableViewCell.swift; sourceTree = "<group>"; };
+		2EC131E72986CCCB009F0018 /* CryptoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptoTableViewCell.xib; sourceTree = "<group>"; };
 		2EF93B8B2985408B00BAF7E4 /* CryptoCase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoCase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF93B8E2985408B00BAF7E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EF93B902985408B00BAF7E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +38,7 @@
 		2EF93B972985408D00BAF7E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EF93B9A2985408D00BAF7E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2EF93B9C2985408D00BAF7E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EF93BA4298544C000BAF7E4 /* CryptoModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +46,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E05AD682986E152001F8544 /* SDWebImageSVGCoder in Frameworks */,
+				2E05AD652986E103001F8544 /* SDWebImageMapKit in Frameworks */,
+				2E05AD632986E103001F8544 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E27F20A29857B2B00898B36 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2E27F20829856F4200898B36 /* CryptoListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		2EF93B822985408B00BAF7E4 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +82,69 @@
 		2EF93B8D2985408B00BAF7E4 /* CryptoCase */ = {
 			isa = PBXGroup;
 			children = (
-				2EF93B8E2985408B00BAF7E4 /* AppDelegate.swift */,
-				2EF93B902985408B00BAF7E4 /* SceneDelegate.swift */,
-				2EF93B922985408B00BAF7E4 /* ViewController.swift */,
+				2EF93BA92985452200BAF7E4 /* Webservices */,
+				2EF93BA82985450300BAF7E4 /* Resources */,
+				2E27F20A29857B2B00898B36 /* ViewModel */,
+				2EF93BA7298544FE00BAF7E4 /* Models */,
+				2EF93BA6298544F400BAF7E4 /* Views */,
 				2EF93B942985408B00BAF7E4 /* Main.storyboard */,
 				2EF93B972985408D00BAF7E4 /* Assets.xcassets */,
 				2EF93B992985408D00BAF7E4 /* LaunchScreen.storyboard */,
 				2EF93B9C2985408D00BAF7E4 /* Info.plist */,
 			);
 			path = CryptoCase;
+			sourceTree = "<group>";
+		};
+		2EF93BA6298544F400BAF7E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2EF93BAB2985454400BAF7E4 /* Cells */,
+				2EF93BAA2985453D00BAF7E4 /* Controller */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2EF93BA7298544FE00BAF7E4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2EF93BA4298544C000BAF7E4 /* CryptoModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2EF93BA82985450300BAF7E4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2EF93B8E2985408B00BAF7E4 /* AppDelegate.swift */,
+				2EF93B902985408B00BAF7E4 /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2EF93BA92985452200BAF7E4 /* Webservices */ = {
+			isa = PBXGroup;
+			children = (
+				2E2E210729856842000F0906 /* APICaller.swift */,
+				2E22AB6929869AF8007116B5 /* APIConstants.swift */,
+			);
+			path = Webservices;
+			sourceTree = "<group>";
+		};
+		2EF93BAA2985453D00BAF7E4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2EF93B922985408B00BAF7E4 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2EF93BAB2985454400BAF7E4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2EC131E62986CCCB009F0018 /* CryptoTableViewCell.swift */,
+				2EC131E72986CCCB009F0018 /* CryptoTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +163,11 @@
 			dependencies = (
 			);
 			name = CryptoCase;
+			packageProductDependencies = (
+				2E05AD622986E103001F8544 /* SDWebImage */,
+				2E05AD642986E103001F8544 /* SDWebImageMapKit */,
+				2E05AD672986E152001F8544 /* SDWebImageSVGCoder */,
+			);
 			productName = CryptoCase;
 			productReference = 2EF93B8B2985408B00BAF7E4 /* CryptoCase.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +196,10 @@
 				Base,
 			);
 			mainGroup = 2EF93B822985408B00BAF7E4;
+			packageReferences = (
+				2E05AD612986E103001F8544 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				2E05AD662986E152001F8544 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */,
+			);
 			productRefGroup = 2EF93B8C2985408B00BAF7E4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EC131E92986CCCB009F0018 /* CryptoTableViewCell.xib in Resources */,
 				2EF93B9B2985408D00BAF7E4 /* LaunchScreen.storyboard in Resources */,
 				2EF93B982985408D00BAF7E4 /* Assets.xcassets in Resources */,
 				2EF93B962985408B00BAF7E4 /* Main.storyboard in Resources */,
@@ -138,9 +228,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E2E210829856842000F0906 /* APICaller.swift in Sources */,
 				2EF93B932985408B00BAF7E4 /* ViewController.swift in Sources */,
+				2E27F20929856F4200898B36 /* CryptoListViewModel.swift in Sources */,
+				2E22AB6A29869AF8007116B5 /* APIConstants.swift in Sources */,
 				2EF93B8F2985408B00BAF7E4 /* AppDelegate.swift in Sources */,
+				2EF93BA5298544C000BAF7E4 /* CryptoModels.swift in Sources */,
 				2EF93B912985408B00BAF7E4 /* SceneDelegate.swift in Sources */,
+				2EC131E82986CCCB009F0018 /* CryptoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +453,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2E05AD612986E103001F8544 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		2E05AD662986E152001F8544 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSVGCoder.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2E05AD622986E103001F8544 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E05AD612986E103001F8544 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		2E05AD642986E103001F8544 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E05AD612986E103001F8544 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+		2E05AD672986E152001F8544 /* SDWebImageSVGCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E05AD662986E152001F8544 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */;
+			productName = SDWebImageSVGCoder;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2EF93B832985408B00BAF7E4 /* Project object */;
 }
