@@ -11,13 +11,19 @@ import SDWebImageSVGCoder
 
 class CryptoTableViewCell: UITableViewCell {
     
+    
+    
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var symbolLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var changeLabel: UILabel!
-    var viewModel: CryptoViewModel?
+    var viewModel: CryptoListViewModel!
+    
+    
+    
+    
     
     func configCell(model: Coins) {
         symbolLabel.text = model.symbol
@@ -29,7 +35,7 @@ class CryptoTableViewCell: UITableViewCell {
         let formatter = NumberFormatter()
         formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 2
-        priceLabel.text = "$(\(formatter.string(from: NSNumber(value: priceChange)) ?? "")"
+        priceLabel.text = "(\(formatter.string(from: NSNumber(value: priceChange)) ?? "")"
         changeLabel.text = "\(change)% ($\(formatter.string(from: NSNumber(value: priceChange)) ?? ""))"
         if priceChange > 0 {
             changeLabel.textColor = UIColor.systemGreen

@@ -8,18 +8,18 @@
 import Foundation
 
 enum APICall: String {
-    case getData
+    case getCryptos
     
     private var urlString: String {
         switch self {
-        case .getData:
+        case .getCryptos:
             return "https://psp-merchantpanel-service-sandbox.ozanodeme.com.tr/api/v1/dummy/coins"
         }
     }
     
     var url: URL {
         switch self {
-        case .getData:
+        case .getCryptos:
             return URL(string: urlString)!
         }
     }

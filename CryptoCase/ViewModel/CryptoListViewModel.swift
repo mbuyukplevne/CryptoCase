@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class CryptoViewModel {
+final class CryptoListViewModel {
     var cryptoList: DataClass?
     private let APIService: APICallService
     

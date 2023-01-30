@@ -47,7 +47,7 @@ final class APICallService: APICallServiceProtocol {
         self.service = service
     }
     func getCrypto(completion: @escaping (Result<Cryptos, Error>) -> Void) {
-        service.fetch(response: Cryptos.self, with: .getData, completion: completion)
+        service.fetch(response: Cryptos.self, with: .getCryptos, completion: completion)
     }
 }
 

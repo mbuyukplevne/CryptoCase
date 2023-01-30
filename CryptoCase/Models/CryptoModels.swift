@@ -15,8 +15,8 @@ public struct Cryptos: Codable {
 
 // MARK: - Dataclass
 public struct DataClass: Codable {
-    public let stats: Stats?
-    public let coins: [Coins]?
+    let stats: Stats?
+    var coins: [Coins]?
     
 }
 
