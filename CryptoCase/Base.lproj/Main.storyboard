@@ -18,67 +18,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dGz-NX-a6d">
-                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
+                                <rect key="frame" x="16" y="126" width="382" height="770"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="yFK-jw-v22">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="206" translatesAutoresizingMaskIntoConstraints="NO" id="X5G-hV-DUU">
-                                            <rect key="frame" x="8" y="5" width="403" height="34.5"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ranking List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWV-9c-YUC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="98.5" height="34.5"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncz-NF-4e3">
-                                                    <rect key="frame" x="304.5" y="0.0" width="98.5" height="34.5"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="24h Vol">
-                                                        <imageReference key="image" image="arrowtriangle.down.fill" catalog="system" symbolScale="medium"/>
-                                                        <fontDescription key="titleFontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
-                                                    </buttonConfiguration>
-                                                    <connections>
-                                                        <action selector="sortButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fK-1x-qCC"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstItem="X5G-hV-DUU" firstAttribute="top" secondItem="yFK-jw-v22" secondAttribute="top" constant="5" id="IwX-xY-vpf"/>
-                                        <constraint firstItem="X5G-hV-DUU" firstAttribute="leading" secondItem="yFK-jw-v22" secondAttribute="leading" constant="8" id="POd-7X-E5V"/>
-                                        <constraint firstAttribute="bottom" secondItem="X5G-hV-DUU" secondAttribute="bottom" constant="4.5" id="n95-Ql-Dvt"/>
-                                        <constraint firstAttribute="trailing" secondItem="X5G-hV-DUU" secondAttribute="trailing" constant="3" id="p1I-vq-xwy"/>
-                                    </constraints>
-                                </view>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CryptoTableViewCell" id="bK6-wx-C5d" customClass="CryptoTableViewCell" customModule="CryptoCase" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="94" width="414" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bK6-wx-C5d" id="dbw-K5-Zx3">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="nwS-bd-t2N">
+                                <rect key="frame" x="16" y="92" width="382" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ranking List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWV-9c-YUC">
+                                        <rect key="frame" x="0.0" y="0.0" width="91" height="34"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncz-NF-4e3">
+                                        <rect key="frame" x="291" y="0.0" width="91" height="34"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="24h Vol">
+                                            <imageReference key="image" image="arrowtriangle.down.fill" catalog="system" symbolScale="small"/>
+                                            <fontDescription key="titleFontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="sortButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fK-1x-qCC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dGz-NX-a6d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Wgw-Ib-lfP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dGz-NX-a6d" secondAttribute="trailing" id="g0f-Hw-v4N"/>
-                            <constraint firstItem="dGz-NX-a6d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nbc-sn-BZE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dGz-NX-a6d" secondAttribute="bottom" id="vXS-Pl-46j"/>
+                            <constraint firstItem="dGz-NX-a6d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="2Cw-wM-acg"/>
+                            <constraint firstItem="nwS-bd-t2N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="51k-qN-jLe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dGz-NX-a6d" secondAttribute="trailing" constant="16" id="DHD-WN-PnX"/>
+                            <constraint firstItem="nwS-bd-t2N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="QbR-xW-xph"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nwS-bd-t2N" secondAttribute="trailing" constant="16" id="Rax-iu-41l"/>
+                            <constraint firstAttribute="bottom" secondItem="dGz-NX-a6d" secondAttribute="bottom" id="Saw-0I-JTt"/>
+                            <constraint firstItem="dGz-NX-a6d" firstAttribute="top" secondItem="nwS-bd-t2N" secondAttribute="bottom" constant="5" id="apv-6f-CCe"/>
+                            <constraint firstItem="dGz-NX-a6d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fLD-zv-brB"/>
+                            <constraint firstAttribute="bottom" secondItem="dGz-NX-a6d" secondAttribute="bottom" id="mQZ-yu-dci"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dGz-NX-a6d" secondAttribute="trailing" id="wbC-PD-EnH"/>
+                            <constraint firstItem="dGz-NX-a6d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="x1I-aD-l3C"/>
+                            <constraint firstItem="dGz-NX-a6d" firstAttribute="top" secondItem="nwS-bd-t2N" secondAttribute="bottom" id="xnp-fP-euG"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="prW-I4-YEc"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Ranking List" id="uCP-JK-c13"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
