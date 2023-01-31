@@ -141,6 +141,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configCell(model: model!)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailVc = storyboard.instantiateViewController(withIdentifier: "DetailID") as! DetailViewController
+        let selected = self.viewModel?.cryptoList?.coins![indexPath.section]
+        detailVc.selectedCrypto = selected
+        self.navigationController?.pushViewController(detailVc, animated: true)
+    }
    
 }
 

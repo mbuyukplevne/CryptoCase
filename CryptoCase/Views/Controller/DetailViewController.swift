@@ -8,13 +8,38 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
+    // MARK: - Variables
+    var model: Coins?
+    
+    // MARK: - Outlets
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var lowLabel: UILabel!
+    @IBOutlet weak var highLabel: UILabel!
+    @IBOutlet weak var volumeLabel: UILabel!
+    
+    var selectedCrypto: Coins?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
-
-  
-
+    func configure(model: Coins!) {
+        if let model = self.model {
+            let originalValue = Double(model.price ?? "1")
+            let roundValue = String(format: "%.2f", originalValue!)
+            priceLabel.text = "$\(roundValue)"
+        }
+        
+        if let priceVolume = Double((model.price!)), let changeValue = Double((model.change!)) {
+            let result = priceVolume * changeValue
+            let roundResult = (result).rounded() / 100
+            volumeLabel.text = String(roundResult)
+            
+            
+        }
+    }
 }
+
+

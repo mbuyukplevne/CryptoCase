@@ -56,4 +56,11 @@ public struct Coins: Codable {
     }
 }
 
+enum SortType: String {
+    case price = "Price"
+    case marketCap = "Market Cap"
+    case volume24 = "24h Vol"
+    case change = "Change"
+}
+
 

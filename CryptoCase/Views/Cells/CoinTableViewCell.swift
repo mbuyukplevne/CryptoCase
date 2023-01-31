@@ -39,22 +39,6 @@ class CoinTableViewCell: UITableViewCell {
                 let roundResult = (result).rounded() / 100
                 volumeLabel.text = String(roundResult)
             }
-//            symbolLabel.text = model.symbol
-//            nameLabel.text = model.name
-//            let price = NumberFormatter().number(from: model.price!)?.doubleValue ?? 0.0
-//            let change = Double(model.change!) ?? 0.0
-//            let priceChange = price * (change / 100)
-//            changeLabel.text = "\(change)% (\(priceChange)$)"
-//            let formatter = NumberFormatter()
-//            formatter.minimumFractionDigits = 2
-//            formatter.maximumFractionDigits = 2
-//            priceLabel.text = "\(formatter.string(from: NSNumber(value: priceChange)) ?? "")"
-//            changeLabel.text = "\(change)% ($\(formatter.string(from: NSNumber(value: priceChange)) ?? ""))"
-//            if priceChange > 0 {
-//                changeLabel.textColor = UIColor.systemGreen
-//            } else {
-//                changeLabel.textColor = UIColor.systemRed
-//            }
     
             let url = URL(string: model.iconURL ?? "")
             SDImageCodersManager.shared.addCoder(SDImageSVGCoder.shared)
