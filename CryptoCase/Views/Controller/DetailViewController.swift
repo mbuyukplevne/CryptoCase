@@ -22,9 +22,19 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure(model: model)
-
+        configureNavBar(model: model)
+        
     }
     
+    // MARK: - NavBar
+    func configureNavBar(model: Coins!) {
+        if let model = self.model {
+            navigationItem.title = model.name
+            navigationItem.prompt = model.symbol
+        }
+    }
+    
+    // MARK: - Labels Config
     func configure(model: Coins!) {
         if let model = self.model {
             let originalValue = Double(model.price ?? "1")
@@ -38,6 +48,8 @@ class DetailViewController: UIViewController {
             let roundResult = (result).rounded() / 100
             volumeLabel.text = String(roundResult)
         }
+        highLabel.text = "$\(String(format: "%.2f", model?.sparkline?.map{Double($0)!}.max() ?? 0.00))"
+        lowLabel.text = "$\(String(format: "%.2f", model?.sparkline?.map{Double($0)!}.max() ?? 0.00))"
     }
 }
 
