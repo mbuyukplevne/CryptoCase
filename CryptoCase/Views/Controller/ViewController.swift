@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     // MARK: - Variables
     var viewModel: CryptoListViewModel?
-    var selectedTitle: String?
+    var selectedCrypto: Coins?
     let menuView = UIView(frame: CGRect(x: 310, y: 125, width: 100, height: 150))
     let priceButton = UIButton(frame: CGRect(x: 20, y: 50, width: 50, height: 20))
     let marketCapButton = UIButton(frame: CGRect(x: 0, y: 20, width: 100, height: 20))
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         menuView.layer.cornerRadius = 20
         menuView.layer.masksToBounds = true
         view.addSubview(menuView)
-        menuView.backgroundColor = .systemGray6
+        menuView.backgroundColor = .systemBlue
         menuView.isHidden = true
         the24hVolume.backgroundColor = .clear
         the24hVolume.setTitle("24h Vol", for: .normal)
@@ -47,7 +47,6 @@ class ViewController: UIViewController {
         changeButton.addTarget(self, action: #selector(sortByChange), for: .touchUpInside)
         marketCapButton.backgroundColor = .clear
         marketCapButton.setTitle("Market Cap", for: .normal)
-        marketCapButton.setTitleColor(UIColor.black, for: .normal)
         marketCapButton.addTarget(self, action: #selector(sortByMarketCap), for: .touchUpInside)
         menuView.addSubview(the24hVolume)
         menuView.addSubview(priceButton)
@@ -126,6 +125,7 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - Extension
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel?.cryptoList?.coins?.count ?? 0
@@ -143,14 +143,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let detailVc = storyboard.instantiateViewController(withIdentifier: "DetailID") as! DetailViewController
-        let selected = self.viewModel?.cryptoList?.coins![indexPath.section]
-        detailVc.selectedCrypto = selected
-        self.navigationController?.pushViewController(detailVc, animated: true)
+        if let choosen = viewModel?.cryptoList?.coins?[indexPath.section] {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "DetailID") as! DetailViewController
+            vc.model = choosen
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
-   
 }
-
-
-

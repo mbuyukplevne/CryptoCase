@@ -18,10 +18,10 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var highLabel: UILabel!
     @IBOutlet weak var volumeLabel: UILabel!
     
-    var selectedCrypto: Coins?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure(model: model)
 
     }
     
@@ -32,12 +32,11 @@ class DetailViewController: UIViewController {
             priceLabel.text = "$\(roundValue)"
         }
         
+        
         if let priceVolume = Double((model.price!)), let changeValue = Double((model.change!)) {
             let result = priceVolume * changeValue
             let roundResult = (result).rounded() / 100
             volumeLabel.text = String(roundResult)
-            
-            
         }
     }
 }
