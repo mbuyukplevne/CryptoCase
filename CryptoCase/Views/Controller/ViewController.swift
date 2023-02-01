@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var sortButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var searchBar: UISearchBar!
     // MARK: - Variables
     var viewModel: CryptoListViewModel?
     var selectedCrypto: Coins?
@@ -27,7 +27,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         registerCell()
         tableView.delegate = self
         tableView.dataSource = self
@@ -150,3 +149,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
+
+
+
+
+
+

@@ -48,6 +48,7 @@ class DetailViewController: UIViewController {
             let roundResult = (result).rounded() / 100
             volumeLabel.text = String(roundResult)
         }
+        
         highLabel.text = "$\(String(format: "%.2f", model?.sparkline?.map{Double($0)!}.max() ?? 0.00))"
         lowLabel.text = "$\(String(format: "%.2f", model?.sparkline?.map{Double($0)!}.max() ?? 0.00))"
     }
