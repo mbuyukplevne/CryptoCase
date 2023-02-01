@@ -68,6 +68,7 @@ class ViewController: UIViewController {
         tableView.register(UINib(nibName: "CoinTableViewCell", bundle: nil), forCellReuseIdentifier: identifier)
     }
     
+    // MARK: - Sort Menu Func.
     @objc func sortBy24hVol() {
         guard let viewModel = self.viewModel else {return}
         viewModel.coinArray.sort{ (coinOne, coinTwo) -> Bool in
@@ -157,7 +158,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-        // MARK: SEARCHBAR TEST
+// MARK: Search Bar
 extension ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel?.filtered = self.viewModel?.mainArray.filter({ (coin) -> Bool in

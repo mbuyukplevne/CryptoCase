@@ -34,12 +34,14 @@ class CoinTableViewCell: UITableViewCell {
                 changeLabel.textColor = changeColor
             }
             
+            // MARK: - Volume
             if let priceValue = Double(model.price!), let changeValue = Double(model.change!) {
                 let result = priceValue * changeValue
                 let roundResult = (result).rounded() / 100
                 volumeLabel.text = String(roundResult)
             }
-    
+            
+            // MARK: - Image
             let url = URL(string: model.iconURL ?? "")
             SDImageCodersManager.shared.addCoder(SDImageSVGCoder.shared)
             iconImageView.sd_setImage(with: url, completed: nil)

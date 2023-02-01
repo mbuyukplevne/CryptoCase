@@ -9,13 +9,10 @@ import Foundation
 import UIKit
 
 final class CryptoListViewModel {
-    //var cryptoList: DataClass?
     var selectedCrypto: Coins?
     var mainArray: [Coins] = []     // Response incoming
     var filtered: [Coins] = []      // Search result temporary
     var coinArray: [Coins] = []     // Show user array
-    
-    
     private let APIService: APICallService
     
     init(APIService: APICallService) {
