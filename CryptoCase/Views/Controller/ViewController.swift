@@ -16,9 +16,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var sortButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
     // MARK: - Variables
     var viewModel: CryptoListViewModel?
-    var selectedCrypto: Coins?
+    
+    // MARK: - Menu View
     let menuView = UIView(frame: CGRect(x: 310, y: 125, width: 100, height: 150))
     let priceButton = UIButton(frame: CGRect(x: 20, y: 50, width: 50, height: 20))
     let marketCapButton = UIButton(frame: CGRect(x: 0, y: 20, width: 100, height: 20))
@@ -30,6 +32,7 @@ class ViewController: UIViewController {
         registerCell()
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
         menuView.layer.cornerRadius = 20
         menuView.layer.masksToBounds = true
         view.addSubview(menuView)
@@ -67,7 +70,7 @@ class ViewController: UIViewController {
     
     @objc func sortBy24hVol() {
         guard let viewModel = self.viewModel else {return}
-        viewModel.cryptoList?.coins!.sort{ (coinOne, coinTwo) -> Bool in
+        viewModel.coinArray.sort{ (coinOne, coinTwo) -> Bool in
             return coinOne.the24HVolume ?? "" < coinTwo.the24HVolume ?? ""
         }
         DispatchQueue.main.async { [self] in
@@ -80,7 +83,7 @@ class ViewController: UIViewController {
     
     @objc func sortByPrice() {
         guard let viewModel = self.viewModel else {return}
-        viewModel.cryptoList?.coins!.sort { (coinOne, coinTwo) -> Bool in
+        viewModel.coinArray.sort{ (coinOne, coinTwo) -> Bool in
             return coinOne.price! < coinTwo.price!
         }
         DispatchQueue.main.async { [self] in
@@ -92,7 +95,7 @@ class ViewController: UIViewController {
     
     @objc func sortByChange() {
         guard let viewModel = self.viewModel else {return}
-        viewModel.cryptoList?.coins!.sort{ (coinOne, coinTwo) -> Bool in
+        viewModel.coinArray.sort{ (coinOne, coinTwo) -> Bool in
             return coinOne.change! < coinTwo.change!
         }
         
@@ -105,7 +108,7 @@ class ViewController: UIViewController {
     
     @objc func sortByMarketCap() {
         guard let viewModel = self.viewModel else {return}
-        viewModel.cryptoList?.coins!.sort { (coinOne, coinTwo) -> Bool in
+        viewModel.coinArray.sort{ (coinOne, coinTwo) -> Bool in
             return coinOne.marketCap! < coinTwo.marketCap!
         }
         DispatchQueue.main.async { [self] in
@@ -127,26 +130,50 @@ class ViewController: UIViewController {
 // MARK: - Extension
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel?.cryptoList?.coins?.count ?? 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel?.coinArray.count ?? 0
+        
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! CoinTableViewCell
-        let model = viewModel?.cryptoList?.coins![indexPath.section]
-        cell.configCell(model: model!)
+        if let model = viewModel?.coinArray[indexPath.row] {
+            cell.configCell(model: model)
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let choosen = viewModel?.cryptoList?.coins?[indexPath.section] {
+        if let choosen = viewModel?.coinArray[indexPath.row] {
             let vc = storyboard?.instantiateViewController(withIdentifier: "DetailID") as! DetailViewController
             vc.model = choosen
             self.navigationController?.pushViewController(vc, animated: true)
+            menuView.isHidden = true
         }
+    }
+}
+
+        // MARK: SEARCHBAR TEST
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel?.filtered = self.viewModel?.mainArray.filter({ (coin) -> Bool in
+            return coin.name!.contains(searchText)
+        }) ?? []
+        if searchText.isEmpty {
+            viewModel?.coinArray = viewModel?.mainArray ?? []
+        } else {
+            viewModel?.coinArray = viewModel?.filtered ?? []
+        }
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel?.coinArray = viewModel?.mainArray ?? []
+        tableView.reloadData()
     }
 }
 

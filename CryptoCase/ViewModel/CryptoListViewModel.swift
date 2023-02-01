@@ -9,7 +9,13 @@ import Foundation
 import UIKit
 
 final class CryptoListViewModel {
-    var cryptoList: DataClass?
+    //var cryptoList: DataClass?
+    var selectedCrypto: Coins?
+    var mainArray: [Coins] = []     // Response incoming
+    var filtered: [Coins] = []      // Search result temporary
+    var coinArray: [Coins] = []     // Show user array
+    
+    
     private let APIService: APICallService
     
     init(APIService: APICallService) {
@@ -17,7 +23,7 @@ final class CryptoListViewModel {
     }
     
     func getSparklineMinMax(index: Int) -> (min: Double, max: Double) {
-        let sparkline = cryptoList?.coins![index].sparkline
+        let sparkline = mainArray[index].sparkline
         let min = Double((sparkline?.min())!)
         let max = Double((sparkline?.max())!)
         return(min!,max!)
@@ -28,7 +34,8 @@ final class CryptoListViewModel {
             switch result {
             case .success(let response):
                 if let cryptos = response.data {
-                    self.cryptoList = cryptos
+                    self.mainArray = cryptos.coins ?? []
+                    self.coinArray = self.mainArray
                 }
                 
                 completionHandler()

@@ -50,7 +50,7 @@ class DetailViewController: UIViewController {
         }
         
         highLabel.text = "$\(String(format: "%.2f", model?.sparkline?.map{Double($0)!}.max() ?? 0.00))"
-        lowLabel.text = "$\(String(format: "%.2f", model?.sparkline?.map{Double($0)!}.max() ?? 0.00))"
+        lowLabel.text = "$\(String(format: "%.2f", model?.sparkline?.map{Double($0)!}.min() ?? 0.00))"
     }
 }
 
