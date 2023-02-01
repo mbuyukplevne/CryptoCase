@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ydR-YY-Fcg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sED-63-nqb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -196,11 +196,43 @@
             </objects>
             <point key="canvasLocation" x="2450.7246376811595" y="2.6785714285714284"/>
         </scene>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="YRH-R0-KVi">
+            <objects>
+                <viewController id="sED-63-nqb" customClass="SplashScreenViewController" customModule="CryptoCase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="32Y-2p-Bs6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cnm-7f-zkm">
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EES-PN-Dis"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Cnm-7f-zkm" firstAttribute="top" secondItem="EES-PN-Dis" secondAttribute="top" id="Wrx-Lx-QQx"/>
+                            <constraint firstItem="EES-PN-Dis" firstAttribute="bottom" secondItem="Cnm-7f-zkm" secondAttribute="bottom" id="XVa-Zh-Twl"/>
+                            <constraint firstItem="Cnm-7f-zkm" firstAttribute="leading" secondItem="EES-PN-Dis" secondAttribute="leading" id="ccd-KL-j7s"/>
+                            <constraint firstItem="EES-PN-Dis" firstAttribute="trailing" secondItem="Cnm-7f-zkm" secondAttribute="trailing" id="h8g-FY-kPu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logoImageView" destination="Cnm-7f-zkm" id="fdN-n8-AN7"/>
+                        <segue destination="ydR-YY-Fcg" kind="presentation" identifier="toMainScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="XoJ-s0-NmK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VDp-3M-7Lu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-586" y="3"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="3IE-ww-cZL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ydR-YY-Fcg" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Q2C-rp-77p"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cb1-pd-ua7">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
