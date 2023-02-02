@@ -8,6 +8,9 @@
 -  MVVM Desing Pattern
 -  SDWebImage SPM
 -  JSON
+-  Generic Network Layer
+-  Extensions
+-  Data Sorting
 
 https://user-images.githubusercontent.com/26140577/216254229-1e0cbdfe-5eab-4928-a547-5888f7754d4e.mov
 
