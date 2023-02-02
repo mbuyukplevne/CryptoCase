@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     var viewModel: CryptoListViewModel?
     
     // MARK: - Menu View
-    let menuView = UIView(frame: CGRect(x: 310, y: 125, width: 100, height: 150))
+    let menuView = UIView(frame: CGRect(x: 285, y: 125, width: 100, height: 150))
     let priceButton = UIButton(frame: CGRect(x: 20, y: 50, width: 50, height: 20))
     let marketCapButton = UIButton(frame: CGRect(x: 0, y: 20, width: 100, height: 20))
     let changeButton = UIButton(frame: CGRect(x: 0, y: 80, width: 100, height: 20))
