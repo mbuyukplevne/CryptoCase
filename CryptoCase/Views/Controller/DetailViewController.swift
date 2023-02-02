@@ -18,12 +18,10 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var highLabel: UILabel!
     @IBOutlet weak var volumeLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure(model: model)
         configureNavBar(model: model)
-        
     }
     
     // MARK: - NavBar
@@ -41,7 +39,6 @@ class DetailViewController: UIViewController {
             let roundValue = String(format: "%.2f", originalValue!)
             priceLabel.text = "$\(roundValue)"
         }
-        
         
         if let priceVolume = Double((model.price!)), let changeValue = Double((model.change!)) {
             let result = priceVolume * changeValue

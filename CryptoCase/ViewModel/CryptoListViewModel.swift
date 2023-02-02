@@ -6,9 +6,10 @@
 //
 
 import Foundation
-import UIKit
 
 final class CryptoListViewModel {
+    
+    // MARK: - Variables
     var selectedCrypto: Coins?
     var mainArray: [Coins] = []     // Response incoming
     var filtered: [Coins] = []      // Search result temporary
@@ -31,6 +32,7 @@ final class CryptoListViewModel {
             switch result {
             case .success(let response):
                 if let cryptos = response.data {
+                    self.mainArray = cryptos.coins ?? []
                     self.mainArray = cryptos.coins ?? []
                     self.coinArray = self.mainArray
                 }

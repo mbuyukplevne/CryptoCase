@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     var viewModel: CryptoListViewModel?
     
     // MARK: - Menu View
-    let menuView = UIView(frame: CGRect(x: 310, y: 125, width: 100, height: 150))
+    let menuView = UIView(frame: CGRect(x: 275, y: 125, width: 100, height: 150))
     let priceButton = UIButton(frame: CGRect(x: 20, y: 50, width: 50, height: 20))
     let marketCapButton = UIButton(frame: CGRect(x: 0, y: 20, width: 100, height: 20))
     let changeButton = UIButton(frame: CGRect(x: 0, y: 80, width: 100, height: 20))
@@ -77,7 +77,6 @@ class ViewController: UIViewController {
         DispatchQueue.main.async { [self] in
             self.tableView.reloadData()
             menuView.isHidden = true
-            
         }
         sortButton.setTitle("24 Vol", for: .normal)
     }
@@ -136,8 +135,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.coinArray.count ?? 0
-        
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

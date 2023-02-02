@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 protocol APICallerProtocol {
     func fetch<T: Codable>(response: T.Type, with path: APICall, completion: @escaping(Result<T, Error>) -> Void)
