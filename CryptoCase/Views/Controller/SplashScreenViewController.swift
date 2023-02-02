@@ -12,10 +12,16 @@ class SplashScreenViewController: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let logoGif = UIImage.gifImageWithName("cryptos1")
         logoImageView.image = logoGif
+        
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
             self.performSegue(withIdentifier: "toMainScreen", sender: nil)
         }
+
     }
+    
+
+
 }

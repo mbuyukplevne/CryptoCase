@@ -17,6 +17,7 @@
 		2E30E9D42988703C00842FB3 /* CoinTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E30E9D22988703C00842FB3 /* CoinTableViewCell.xib */; };
 		2E425EE62987E7B9005A16EA /* Desing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E425EE52987E7B9005A16EA /* Desing.swift */; };
 		2E61358C2988DE7A00A976BB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61358B2988DE7A00A976BB /* DetailViewController.swift */; };
+		2E651FBE298A9CB30018F1BB /* Cryptos.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2E651FBD298A9CB30018F1BB /* Cryptos.gif */; };
 		2E651FC0298A9D980018F1BB /* LogoAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E651FBF298A9D980018F1BB /* LogoAnimationViewController.swift */; };
 		2E651FC2298AA08F0018F1BB /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E651FC1298AA08F0018F1BB /* SplashScreenViewController.swift */; };
 		2E651FC4298AA3BD0018F1BB /* cryptos1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2E651FC3298AA3BD0018F1BB /* cryptos1.gif */; };
@@ -37,6 +38,7 @@
 		2E30E9D22988703C00842FB3 /* CoinTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinTableViewCell.xib; sourceTree = "<group>"; };
 		2E425EE52987E7B9005A16EA /* Desing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desing.swift; sourceTree = "<group>"; };
 		2E61358B2988DE7A00A976BB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		2E651FBD298A9CB30018F1BB /* Cryptos.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Cryptos.gif; sourceTree = "<group>"; };
 		2E651FBF298A9D980018F1BB /* LogoAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoAnimationViewController.swift; sourceTree = "<group>"; };
 		2E651FC1298AA08F0018F1BB /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		2E651FC3298AA3BD0018F1BB /* cryptos1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cryptos1.gif; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				2E425EE52987E7B9005A16EA /* Desing.swift */,
+				2E651FBD298A9CB30018F1BB /* Cryptos.gif */,
 				2E651FC3298AA3BD0018F1BB /* cryptos1.gif */,
 				2EF93BAB2985454400BAF7E4 /* Cells */,
 				2EF93BAA2985453D00BAF7E4 /* Controller */,
@@ -231,6 +234,7 @@
 			files = (
 				2EF93B9B2985408D00BAF7E4 /* LaunchScreen.storyboard in Resources */,
 				2E651FC4298AA3BD0018F1BB /* cryptos1.gif in Resources */,
+				2E651FBE298A9CB30018F1BB /* Cryptos.gif in Resources */,
 				2E30E9D42988703C00842FB3 /* CoinTableViewCell.xib in Resources */,
 				2EF93B982985408D00BAF7E4 /* Assets.xcassets in Resources */,
 				2EF93B962985408B00BAF7E4 /* Main.storyboard in Resources */,
